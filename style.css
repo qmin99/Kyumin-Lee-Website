@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -233,6 +234,7 @@ section {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  display: flex;
 }
 .about-details-container {
   justify-content: center;
@@ -309,19 +311,30 @@ article.icon {
   background: rgb(250, 250, 250);
   height: 20%;
 }
+.project-img-container {
+  gap: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  display: flex;
+}
 .project-img {
-  border-radius: 2rem;
-  width: 60%;
-  height: 60%;
+    width: 75%;
+    height: 280px;
+    border-radius: 2rem;
+    /* Set a fixed height for the images */
+
 }
 .project-title {
   margin: 1rem;
-  color: black;
+  color: rgb(0, 0, 0);
+  font-size:1.2rem;
 }
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
 }
+
+
 /* CONTACT SECTION */
 
 #contact {
@@ -344,7 +357,6 @@ article.icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  
   gap: 0.5rem;
   margin: 1rem;
 }

@@ -8,6 +8,9 @@
   }
 }
 @media screen and (max-width: 1200px) {
+  .logo {
+    margin-right: 350px;
+  }
   #desktop-nav {
     display: none;
   }
@@ -17,15 +20,21 @@
   #experience,
   .experience-details-container {
     margin-top: 2rem;
+    height: max-content;
   }
-  #profile,
   .section-container {
     height: 60vh;
     margin-bottom: 2rem;
     display: block;
   }
-  #contact{
-    height:30vh;
+  #profile {
+    height: 60vh;
+    margin-bottom: 2rem;
+    display: block;
+    height: fit-content;
+  }
+  #contact {
+    height: 30vh;
   }
   .arrow {
     display: none;
@@ -41,20 +50,49 @@
     width: 275px;
     height: 275px;
     margin: 0 auto 2rem;
+    justify-content: center;
   }
   .about-containers {
     margin-top: 1;
   }
+  .project-img-container {
+    flex-wrap: wrap;
+    height:max-content;
+  }
+  .contact-info-container {
+    width: max-content;
+  }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 725px) {
+  .contact-info-upper-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .contact-info-container p,
+  .nav-links li a {
+    font-size: 1rem;
+  }
+  .contact-info-upper-container > * {
+    margin: auto;
+    flex-direction: column;
+    width: 100%; /* Ensure children take up full width */
+    display: flex;
+    padding: 1rem 0;
+  }
+  .contact-info-upper-container > *:not(:last-child) {
+    border-bottom: 2px solid #264e62; 
+    margin-bottom: -5px;/* Adjust color and width as needed */
+  }
   #contact,
   footer {
-    height: 40vh;
+    height: fit-content;
     margin: 2rem;
+    margin-bottom: 1rem;
   }
   #profile {
-    height: 60vh;
+    height: 70vh;
     margin-bottom: 2rem;
+    height: fit-content;
   }
   article {
     font-size: 1rem;
@@ -71,17 +109,8 @@
   .about-containers {
     flex-direction: column;
   }
-  .contact-info-upper-container {
-    flex-direction: column;
-    width: 250px;
- 
-  }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
-  }
-  .contact-info-container {
-    margin: auto;
+  .project-img-container {
+    flex-wrap: wrap;
     flex-direction: column;
   }
   .experience-sub-title {
@@ -89,11 +118,13 @@
   }
   .logo {
     font-size: 1.25rem;
+    margin-right: 290px;
   }
   .nav-links {
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
     text-align: center;
+    margin-top: 2rem;
   }
   .section_pic-container {
     width: auto;
@@ -108,5 +139,14 @@
   }
   .text-container {
     text-align: justify;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    margin-top: 2rem;
   }
 }
