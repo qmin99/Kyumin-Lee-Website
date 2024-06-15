@@ -277,6 +277,12 @@ section {
   width: 400px;
   margin: auto 0;
 }
+.text-container p{
+  padding:2%;
+  color:black;
+
+
+}
 /* EXPERIENCE SECTION */
 #experience {
   position: relative;
