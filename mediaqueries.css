@@ -8,14 +8,18 @@
   }
 }
 @media screen and (max-width: 1200px) {
+  .section_text_p2 {
+    font-size: 1.25rem;
+    margin-bottom: 15%;
+  }
   .logo {
-    margin-right: 350px;
+    padding-right: 20%;
   }
   #desktop-nav {
     display: none;
   }
   #hamburger-nav {
-    display: flex;
+    display: flex ;
   }
   #experience,
   .experience-details-container {
@@ -26,6 +30,9 @@
     height: 60vh;
     margin-bottom: 2rem;
     display: block;
+  }
+  #about{
+    padding-top: 10%;
   }
   #profile {
     height: 60vh;
@@ -66,7 +73,7 @@
 @media screen and (max-width: 725px) {
   .contact-info-upper-container {
     flex-direction: column;
-    width: 100%;
+    width: 97%;
   }
   .contact-info-container p,
   .nav-links li a {
@@ -75,13 +82,14 @@
   .contact-info-upper-container > * {
     margin: auto;
     flex-direction: column;
-    width: 100%; /* Ensure children take up full width */
+    width: 100%; 
     display: flex;
     padding: 1rem 0;
   }
   .contact-info-upper-container > *:not(:last-child) {
-    border-bottom: 2px solid #264e62; 
-    margin-bottom: -5px;/* Adjust color and width as needed */
+    border-bottom: 3px solid #419ecc; 
+    margin-bottom: -5px;
+    border-radius: 10%;
   }
   #contact,
   footer {
@@ -117,9 +125,10 @@
     font-size: 1.25rem;
   }
   .logo {
-    font-size: 1.25rem;
-    margin-right: 290px;
+    font-size: 1.9rem;
+    padding-right: 20%;
   }
+
   .nav-links {
     flex-direction: row;
     gap: 0.5rem;
@@ -133,6 +142,7 @@
   }
   .section_text_p2 {
     font-size: 1.25rem;
+    margin-bottom: 15%;
   }
   .title {
     font-size: 2rem;
@@ -148,5 +158,14 @@
     gap: 0.5rem;
     text-align: center;
     margin-top: 2rem;
+  }
+  .logo{
+    font-size:1.5rem;
+    font-weight: 500;
+  }
+}
+@media screen and (max-width: 470px) {
+  footer p{
+    font-size: 3vw;
   }
 }
