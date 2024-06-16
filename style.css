@@ -5,10 +5,29 @@
 * {
   margin: 0;
   padding: 0;
-  
 }
+
 body {
   font-family: "Poppins", sans-serif;
+}
+.header {
+  z-index: 1;
+  background: linear-gradient(-10deg, white, rgb(241, 250, 254), white);
+  width: 100%;
+  animation: animtate 100s ease infinite;
+}
+
+@keyframes animtate {
+  
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 html {
   scroll-behavior: smooth;
@@ -93,8 +112,8 @@ a:hover {
   border-radius: 8%;
 }
 
-.menu-links> *:not(:last-child){
-  border-bottom: 4px solid #3690bd; 
+.menu-links > *:not(:last-child) {
+  border-bottom: 4px solid #3690bd;
   margin-bottom: -5px;
   border-radius: 10%;
 }
@@ -170,8 +189,14 @@ section {
   text-align: center;
 }
 .section_text_p2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
+  font-size: 2.1vw;
+  margin-bottom: 3rem;
+  margin-top: 10%;
+  position: relative;
+  /*transform:skew(3deg);*/
+  text-shadow: 0 1px 0 #f1f1f1, 0 2px 0 #f1f1f1, 0 3px 0 #f1f1f1,
+    0 4px 0 #f1f1f1, 0 5px 0 #f1f1f1, 1px 15px 10px rgba(16, 16, 16, 0.3),
+    1px 20px 20px rgba(16, 16, 16, 0.3);
 }
 
 .title {
@@ -277,11 +302,9 @@ section {
   width: 400px;
   margin: auto 0;
 }
-.text-container p{
-  padding:2%;
-  color:black;
-
-
+.text-container p {
+  padding: 2%;
+  color: black;
 }
 /* EXPERIENCE SECTION */
 #experience {
@@ -331,22 +354,20 @@ article.icon {
   display: flex;
 }
 .project-img {
-    width: 75%;
-    height: 280px;
-    border-radius: 2rem;
-    /* Set a fixed height for the images */
-
+  width: 75%;
+  height: 280px;
+  border-radius: 2rem;
+  /* Set a fixed height for the images */
 }
 .project-title {
   margin: 1rem;
   color: rgb(0, 0, 0);
-  font-size:1.2rem;
+  font-size: 1.2rem;
 }
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
 }
-
 
 /* CONTACT SECTION */
 

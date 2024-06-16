@@ -7,10 +7,17 @@
     flex-wrap: wrap;
   }
 }
+@media screen and (max-width: 1215px) {
+  .section_text_p2 {
+    font-size: 1.5rem;
+  
+  }
+}
 @media screen and (max-width: 1200px) {
   .section_text_p2 {
     font-size: 1.25rem;
-    margin-bottom: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
   .logo {
     padding-right: 20%;
