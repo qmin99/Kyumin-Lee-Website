@@ -49,14 +49,15 @@ nav,
 }
 
 nav {
-  justify-content: space-around;
+  justify-content:space-between;
   align-items: center;
-  height: 17vh;
+  height: 7vh;
+  padding: 2rem;
 }
 .nav-links {
   gap: 2rem;
-  list-style: none;
   font-size: 1.5rem;
+  list-style: square;
 }
 a {
   color: black;
@@ -407,6 +408,12 @@ article.icon {
 footer {
   height: 26vh;
   margin: 0.1rem;
+}
+footer nav{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  height: 17vh;
 }
 footer p {
   text-align: center;
