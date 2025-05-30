@@ -1,7 +1,8 @@
 @media screen and (max-width: 1400px) {
   #profile {
-    height: 83vh;
+    min-height: 83vh; /* Changed from height */
     margin-bottom: 6rem;
+    /* Relies on general section padding (4vh top/bottom) */
   }
   .about-containers {
     flex-wrap: wrap;
@@ -40,15 +41,21 @@
   }
   #about{
     padding-top: 10%;
+    padding-bottom: 10%; /* Added for symmetry */
   }
   #profile {
-    height: 60vh;
+    /* height: 60vh; */ /* fit-content is better */
     margin-bottom: 2rem;
     display: block;
     height: fit-content;
+    padding-top: 4vh; /* Ensuring padding */
+    padding-bottom: 4vh; /* Ensuring padding */
   }
   #contact {
-    height: 30vh;
+    /* height: 30vh; */ /* fit-content is better */
+    height: fit-content;
+    padding-top: 4vh; /* Ensuring padding */
+    padding-bottom: 4vh; /* Ensuring padding */
   }
   .arrow {
     display: none;
@@ -59,6 +66,8 @@
   }
   section {
     margin: 0 5%;
+    padding-top: 6vh; /* Adjusted padding for smaller screens */
+    padding-bottom: 6vh; /* Adjusted padding for smaller screens */
   }
   .section_pic-container {
     width: 275px;
@@ -101,13 +110,17 @@
   #contact,
   footer {
     height: fit-content;
-    margin: 2rem;
-    margin-bottom: 1rem;
+    margin: 2rem; /* This sets top/bottom to 2rem and left/right to 2rem */
+    margin-bottom: 1rem; /* This then overrides bottom margin to 1rem */
+    padding-top: 2vh; /* Adding some explicit padding */
+    padding-bottom: 2vh; /* Adding some explicit padding */
   }
   #profile {
-    height: 70vh;
+    /* height: 70vh; */ /* fit-content is better */
     margin-bottom: 2rem;
     height: fit-content;
+    padding-top: 4vh; /* Ensuring padding */
+    padding-bottom: 4vh; /* Ensuring padding */
   }
   article {
     font-size: 1rem;

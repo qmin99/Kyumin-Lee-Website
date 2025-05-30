@@ -2,6 +2,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+:root {
+  --accent-color: #38A89D; /* Muted Teal */
+  --hover-accent-color: #2F8C81; /* Darker shade for hover */
+  --text-color: rgb(85, 85, 85);
+  --heading-color: rgb(53, 53, 53); /* Existing dark gray for headings */
+  --link-hover-color: #CD5C5C; /* A softer, more modern red/coral for link hovers */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,20 +17,18 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  line-height: 1.6;
 }
 .header {
   z-index: 1;
   background: linear-gradient(-10deg, white, rgb(241, 250, 254), white);
   width: 100%;
-  animation: animtate 100s ease infinite;
+  animation: animateHeaderBackground 20s ease-in-out infinite alternate; /* Updated animation properties */
+  background-size: 200% 200%; /* Added background-size */
 }
 
-@keyframes animtate {
-  
+@keyframes animateHeaderBackground { /* Renamed and simplified keyframes */
   0% {
-    background-position: 0% 50%;
-  }
-  50% {
     background-position: 0% 50%;
   }
   100% {
@@ -34,6 +40,7 @@ html {
 }
 p {
   color: rgb(85, 85, 85);
+  font-size: 1.1rem;
 }
 /* Transition */
 
@@ -65,10 +72,10 @@ a {
   text-decoration-color: white;
 }
 a:hover {
-  color: rgb(130, 20, 20);
+  color: var(--link-hover-color); /* Changed from rgb(130, 20, 20) */
   text-decoration: underline;
-  text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-underline-offset: 1rem; /* Keep this, it's a nice effect */
+  text-decoration-color: var(--link-hover-color); /* Or make this var(--link-hover-color) for consistency */
 }
 
 .logo {
@@ -114,7 +121,7 @@ a:hover {
 }
 
 .menu-links > *:not(:last-child) {
-  border-bottom: 4px solid #3690bd;
+  border-bottom: 4px solid var(--accent-color); /* Updated border color */
   margin-bottom: -5px;
   border-radius: 10%;
 }
@@ -157,10 +164,10 @@ a:hover {
 /* SECTIONS  */
 section {
   padding-top: 4vh;
-  height: 96vh;
+  padding-bottom: 4vh; /* Added for symmetry */
   margin: 0 10rem;
   box-sizing: border-box;
-  min-height: fit-content;
+  min-height: fit-content; /* Ensures sections can grow */
 }
 .section-container {
   display: flex;
@@ -170,7 +177,8 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  height: 80vh;
+  min-height: 80vh; /* Changed from height */
+  /* padding-bottom is covered by general section style */
 }
 
 .section_pic-container {
@@ -188,9 +196,13 @@ section {
 }
 .section_text_p1 {
   text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
 }
 .section_text_p2 {
-  font-size: 2.1vw;
+  font-size: 1.75rem; /* Adjusted from 2.1vw */
+  line-height: 1.4;
   margin-bottom: 3rem;
   margin-top: 10%;
   position: relative;
@@ -201,7 +213,9 @@ section {
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 #socials-container {
@@ -231,29 +245,44 @@ section {
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* New default shadow */
+  will-change: transform, box-shadow; /* Performance hint */
+  cursor: pointer; /* Moved from :hover states */
 }
 
-.btn-color-1,
-.btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
+.btn:hover {
+  /* Color changes are handled by .btn-color-X:hover */
+  transform: translateY(-2px) scale(1.02); /* Lift and slightly enlarge */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Enhanced shadow on hover */
 }
-.btn-color-1:hover,
-.btn-color-2:hover {
-  cursor: pointer;
+
+.btn:active {
+  /* Color changes can also be specified for active if different from hover */
+  transform: translateY(1px) scale(0.98); /* Depress and slightly shrink */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Reduced shadow for pressed look */
 }
-.btn-color-1,
-.btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
+
+.btn-color-1 { /* Was 'Contact Info' button */
+  border: rgb(53, 53, 53) 0.1rem solid; /* Keep border or use accent */
+  background: var(--accent-color); /* New accent color for background */
+  color: white; /* Text color on accent */
 }
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  background: var(--hover-accent-color); /* Darker accent on hover */
+  border-color: var(--hover-accent-color); /* Adjust border on hover */
+  /* cursor: pointer; Removed */
 }
-.btn-color-2 {
+
+.btn-color-2 { /* Was 'Download Resume' and project buttons */
+  border: var(--accent-color) 0.1rem solid; /* Use accent for border */
+  color: var(--accent-color); /* Text color is accent */
   background: none;
 }
 .btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color); /* Ensure border remains consistent or adapts */
+  /* cursor: pointer; Removed */
 }
 .btn-container {
   gap: 1rem;
@@ -262,6 +291,8 @@ section {
 /* About Section */
 #about {
   position: relative;
+  min-height: 96vh; /* Changed from height */
+  /* padding-bottom is covered by general section style */
 }
 .about-containers {
   gap: 2rem;
@@ -293,6 +324,18 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.75rem; /* Increased padding */
+}
+.details-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.details-container h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 .section-container {
   gap: 4rem;
@@ -306,16 +349,20 @@ section {
 .text-container p {
   padding: 2%;
   color: black;
+  line-height: 1.7;
+  text-indent: 2em;
 }
 /* EXPERIENCE SECTION */
 #experience {
   position: relative;
+  min-height: 96vh; /* Changed from height */
+  /* padding-bottom is covered by general section style */
 }
 .experience-sub-title {
   color: rgb(85, 85, 85);
   font-weight: 600;
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
 }
 .experience-details-container {
   display: flex;
@@ -333,7 +380,7 @@ section {
 article {
   display: flex;
   width: 10rem;
-  gap: 0.5rem;
+  gap: 0.75rem; /* Increased gap */
   /* space around */
 }
 article.icon {
@@ -342,6 +389,8 @@ article.icon {
 /* PROJECTS SECTION */
 #projects {
   position: relative;
+  min-height: 96vh; /* Changed from height */
+  /* padding-bottom is covered by general section style */
 }
 .color-container {
   border-color: rgb(163, 163, 163);
@@ -376,7 +425,8 @@ article.icon {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  min-height: 70vh; /* Changed from height */
+  /* padding-bottom is covered by general section style */
 }
 .contact-info-upper-container {
   display: flex;
@@ -406,15 +456,18 @@ article.icon {
 }
 /* Footer Section */
 footer {
-  height: 26vh;
+  /* height: 26vh; */ /* Consider removing fixed height or use min-height */
+  min-height: 20vh; /* Adjusted for flexibility */
   margin: 0.1rem;
+  padding: 1rem 0; /* Added padding for top/bottom */
 }
 footer nav{
   display: flex;
   justify-content:space-around;
   align-items: center;
-  height: 17vh;
+  min-height: 17vh; /* Changed from height */
 }
 footer p {
   text-align: center;
+  padding: 1rem 0; /* Added padding */
 }
